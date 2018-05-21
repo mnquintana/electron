@@ -1904,8 +1904,7 @@ v8::Local<v8::Value> WebContents::GetWebPreferences(v8::Isolate* isolate) {
 }
 
 v8::Local<v8::Value> WebContents::GetLastWebPreferences(v8::Isolate* isolate) {
-  WebContentsPreferences* web_preferences =
-      WebContentsPreferences::FromWebContents(web_contents());
+  auto* web_preferences = WebContentsPreferences::From(web_contents());
   if (!web_preferences)
     return v8::Null(isolate);
   return mate::ConvertToV8(isolate, *web_preferences->last_dict());
