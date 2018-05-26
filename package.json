@@ -26,7 +26,8 @@
     "standard": "^10.0.0",
     "standard-markdown": "^4.0.0",
     "sumchecker": "^2.0.2",
-    "temp": "^0.8.3"
+    "temp": "^0.8.3",
+    "typescript": "^2.8.3"
   },
   "standard": {
     "ignore": [
@@ -61,6 +62,7 @@
     "lint-js-in-markdown": "standard-markdown docs",
     "create-api-json": "electron-docs-linter docs --outfile=out/electron-api.json --version=$npm_package_version",
     "create-typescript-definitions": "npm run create-api-json && electron-typescript-definitions --in=out/electron-api.json --out=out/electron.d.ts",
+    "tsc": "tsc",
     "mock-release": "node ./script/ci-release-build.js",
     "preinstall": "node -e 'process.exit(0)'",
     "publish-to-npm": "node ./script/publish-to-npm.js",
